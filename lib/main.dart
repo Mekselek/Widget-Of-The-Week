@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
           Expanded(
               flex: 3,
               child: Container(
-                child: Center(
+                child: const Center(
                   child: Text(
                     textAlign: TextAlign.center,
                     'This is my Expanded widget of the week test 📱',
@@ -46,10 +46,56 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.lightGreen,
               )),
           Expanded(
-            flex: 1,
-            child: Container(color: Colors.redAccent),
-          )
+              flex: 1,
+              child: Container(
+                  color: Colors.redAccent,
+                  child: Center(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SafeAreaWidget()));
+                      },
+                      child: Text('Switch to next Widget'),
+                    ),
+                  )))
         ],
+      ),
+    );
+  }
+}
+
+class SafeAreaWidget extends StatefulWidget {
+  const SafeAreaWidget({super.key});
+
+  @override
+  State<SafeAreaWidget> createState() => _SafeAreaWidgetState();
+}
+
+class _SafeAreaWidgetState extends State<SafeAreaWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        bottom: false,
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                color: Colors.deepPurpleAccent,
+              ),
+            ),
+            Expanded(
+                child: Container(
+              color: Colors.blue,
+              child: const Center(
+                  child: Center(
+                child: Text('Go back'),
+              )),
+            ))
+          ],
+        ),
       ),
     );
   }
