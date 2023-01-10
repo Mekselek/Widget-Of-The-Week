@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,9 +22,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+var klikaned = 'Siemanko';
+var randomowa = new Random().nextInt(2);
+
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,11 +46,36 @@ class MyHomePage extends StatelessWidget {
           Expanded(
               flex: 3,
               child: Container(
+<<<<<<< HEAD
                 child: const Center(
                   child: Text(
                     textAlign: TextAlign.center,
                     'This is my Expanded widget of the week test 📱',
                     style: TextStyle(fontSize: 26, color: Colors.white70),
+=======
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        textAlign: TextAlign.center,
+                        'This is my Expanded widget of the week test ${klikaned} 📱',
+                        style: TextStyle(fontSize: 26, color: Colors.white70),
+                      ),
+                      TextButton(
+                          onPressed: (() {
+                            print(randomowa);
+
+                            setState(() {
+                              if (randomowa == 0) {
+                                klikaned = "Test0";
+                              } else
+                                klikaned = 'Test1';
+                            });
+                          }),
+                          child: Text('Hello'))
+                    ],
+>>>>>>> 75e6de6 (Addet setState)
                   ),
                 ),
                 color: Colors.lightGreen,
