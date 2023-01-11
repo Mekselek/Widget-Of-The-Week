@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const MyWrapWidget(),
     );
   }
 }
@@ -98,5 +98,57 @@ class _SafeAreaWidgetState extends State<SafeAreaWidget> {
         ),
       ),
     );
+  }
+}
+
+class MyWrapWidget extends StatelessWidget {
+  const MyWrapWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.lightGreen,
+        body: SafeArea(
+          child: Wrap(
+            spacing: 40,
+            runSpacing: 40,
+            direction: Axis.horizontal,
+            alignment: WrapAlignment.center,
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.amber,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.green,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.purpleAccent,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.blueGrey,
+              ),
+              Text(
+                textAlign: TextAlign.center,
+                'This is my Wrap widget! It\'s so much fun! 🤓 ',
+                style: TextStyle(
+                  fontSize: 36,
+                ),
+              )
+            ],
+          ),
+        ));
   }
 }
