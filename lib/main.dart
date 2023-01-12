@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:expanded_wotw/AnotherWidgets.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,11 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-<<<<<<< HEAD
       home: const MyWrapWidget(),
-=======
-      home: MyListView(),
->>>>>>> 180b6f3 (Added ListView widget)
     );
   }
 }
@@ -51,36 +46,11 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
               flex: 3,
               child: Container(
-<<<<<<< HEAD
                 child: const Center(
                   child: Text(
                     textAlign: TextAlign.center,
                     'This is my Expanded widget of the week test 📱',
                     style: TextStyle(fontSize: 26, color: Colors.white70),
-=======
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        textAlign: TextAlign.center,
-                        'This is my Expanded widget of the week test ${klikaned} 📱',
-                        style: TextStyle(fontSize: 26, color: Colors.white70),
-                      ),
-                      TextButton(
-                          onPressed: (() {
-                            print(randomowa);
-
-                            setState(() {
-                              if (randomowa == 0) {
-                                klikaned = "Test0";
-                              } else
-                                klikaned = 'Test1';
-                            });
-                          }),
-                          child: Text('Hello'))
-                    ],
->>>>>>> 75e6de6 (Addet setState)
                   ),
                 ),
                 color: Colors.lightGreen,
