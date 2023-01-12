@@ -105,10 +105,6 @@ class MyListView extends StatelessWidget {
             'This is my text',
             style: TextStyle(fontSize: 36),
           ),
-          Text(
-            'This is my text',
-            style: TextStyle(fontSize: 36),
-          ),
         ],
       ),
     );
