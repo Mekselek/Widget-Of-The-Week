@@ -51,36 +51,11 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
               flex: 3,
               child: Container(
-<<<<<<< HEAD
                 child: const Center(
                   child: Text(
                     textAlign: TextAlign.center,
                     'This is my Expanded widget of the week test 📱',
                     style: TextStyle(fontSize: 26, color: Colors.white70),
-=======
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        textAlign: TextAlign.center,
-                        'This is my Expanded widget of the week test ${klikaned} 📱',
-                        style: TextStyle(fontSize: 26, color: Colors.white70),
-                      ),
-                      TextButton(
-                          onPressed: (() {
-                            print(randomowa);
-
-                            setState(() {
-                              if (randomowa == 0) {
-                                klikaned = "Test0";
-                              } else
-                                klikaned = 'Test1';
-                            });
-                          }),
-                          child: Text('Hello'))
-                    ],
->>>>>>> 75e6de6 (Addet setState)
                   ),
                 ),
                 color: Colors.lightGreen,
