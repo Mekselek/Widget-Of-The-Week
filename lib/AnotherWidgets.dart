@@ -2,6 +2,7 @@
 
 //ListView
 
+import 'package:expanded_wotw/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -143,5 +144,49 @@ class MyListViewBuilder extends StatelessWidget {
                 ),
               );
             })));
+  }
+}
+
+class MyAnimatedContainer extends StatefulWidget {
+  @override
+  State<MyAnimatedContainer> createState() => _MyAnimatedContainerState();
+}
+
+var myDuration = 1;
+double rectangleValue = 50;
+Color? myColor = Colors.lightGreenAccent;
+var isClicked = true;
+
+class _MyAnimatedContainerState extends State<MyAnimatedContainer> {
+  void _expandBox() {
+    setState(() {
+      if (isClicked) {
+        rectangleValue = 100;
+        myColor = Colors.deepPurpleAccent;
+        isClicked = !isClicked;
+      } else {
+        rectangleValue = 50;
+        myColor = Colors.lightGreenAccent;
+        isClicked = !isClicked;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _expandBox,
+      child: Scaffold(
+        backgroundColor: Color.fromARGB(255, 21, 21, 21),
+        body: Center(
+            child: AnimatedContainer(
+          width: rectangleValue,
+          height: rectangleValue,
+          curve: Curves.bounceInOut,
+          duration: Duration(seconds: myDuration),
+          color: myColor,
+        )),
+      ),
+    );
   }
 }
