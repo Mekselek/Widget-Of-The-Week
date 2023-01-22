@@ -190,3 +190,33 @@ class _MyAnimatedContainerState extends State<MyAnimatedContainer> {
     );
   }
 }
+
+class MyStackWidget extends StatelessWidget {
+  const MyStackWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Stack(
+            children: [
+              Container(
+                width: 200,
+                height: 300,
+                color: Colors.red,
+              ),
+              Container(
+                width: 100,
+                height: 200,
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
