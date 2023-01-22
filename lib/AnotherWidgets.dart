@@ -208,10 +208,13 @@ class MyStackWidget extends StatelessWidget {
                 height: 300,
                 color: Colors.red,
               ),
-              Container(
-                width: 100,
-                height: 200,
-                color: Color.fromARGB(255, 0, 0, 0),
+              Opacity(
+                opacity: 0.5,
+                child: Container(
+                  width: 100,
+                  height: 200,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
               ),
             ],
           )
